@@ -15,7 +15,13 @@ class BookReviewResource extends JsonResource
     public function toArray($request)
     {
         return [
-            // @TODO implement
+            "id" => $this->id,
+            "review" => $this->review,
+            "comment" => $this->comment,
+            "user" => [
+                "id" => $this->user->id,
+                "name" => $this->user->name,
+            ],
         ];
     }
 }
